@@ -1,0 +1,175 @@
+{
+  "ModelName": "CustomerOrders",
+  "ModelMetadata": {
+    "Author": "",
+    "DateCreated": "Sep 17, 2019, 12:06 PM",
+    "DateLastModified": "Oct 01, 2019, 2:51 PM",
+    "Description": ""
+  },
+  "DataModel": [
+    {
+      "TableName": "CustomerAndOrders",
+      "KeyAttributes": {
+        "PartitionKey": {
+          "AttributeName": "customerId",
+          "AttributeType": "S"
+        },
+        "SortKey": {
+          "AttributeName": "sk",
+          "AttributeType": "S"
+        }
+      },
+      "NonKeyAttributes": [
+        {
+          "AttributeName": "customerName",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "customerAddress",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "orderId",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "deliveryAddress",
+          "AttributeType": "S"
+        }
+      ],
+      "TableFacets": [
+        {
+          "FacetName": "CustomerFacet1",
+          "KeyAttributeAlias": {
+            "PartitionKeyAlias": "Cust Number Alias",
+            "SortKeyAlias": "Record Date Alias"
+          },
+          "NonKeyAttributes": [
+            "deliveryAddress"
+          ],
+          "DataAccess": {
+            "MySql": {}
+          },
+          "TableData": []
+        }
+      ],
+      "GlobalSecondaryIndexes": [
+        {
+          "IndexName": "OrderId",
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeName": "orderId",
+              "AttributeType": "S"
+            }
+          },
+          "Projection": {
+            "ProjectionType": "ALL"
+          }
+        }
+      ],
+      "TableData": [
+        {
+          "customerId": {
+            "S": "123"
+          },
+          "sk": {
+            "S": "customer"
+          },
+          "customerName": {
+            "S": "Customer123"
+          },
+          "customerAddress": {
+            "S": "123, Seattle"
+          }
+        },
+        {
+          "customerId": {
+            "S": "123"
+          },
+          "sk": {
+            "S": "20190823"
+          },
+          "orderId": {
+            "S": "1001"
+          },
+          "deliveryAddress": {
+            "S": "here"
+          }
+        },
+        {
+          "customerId": {
+            "S": "123"
+          },
+          "sk": {
+            "S": "20190822"
+          },
+          "orderId": {
+            "S": "1003"
+          },
+          "deliveryAddress": {
+            "S": "there"
+          }
+        },
+        {
+          "customerId": {
+            "S": "321"
+          },
+          "sk": {
+            "S": "customer"
+          },
+          "customerName": {
+            "S": "321 Customer"
+          },
+          "customerAddress": {
+            "S": "321, London"
+          }
+        },
+        {
+          "customerId": {
+            "S": "321"
+          },
+          "sk": {
+            "S": "20190821"
+          },
+          "orderId": {
+            "S": "1002"
+          },
+          "deliveryAddress": {
+            "S": "some"
+          }
+        },
+        {
+          "customerId": {
+            "S": "321"
+          },
+          "sk": {
+            "S": "20190820"
+          },
+          "orderId": {
+            "S": "1004"
+          },
+          "deliveryAddress": {
+            "S": "where"
+          }
+        },
+        {
+          "customerId": {
+            "S": "444"
+          },
+          "sk": {
+            "S": "20190825"
+          },
+          "orderId": {
+            "S": "4004"
+          },
+          "deliveryAddress": {
+            "S": "Penn street"
+          }
+        }
+      ],
+      "DataAccess": {
+        "MySql": {}
+      }
+    }
+  ]
+}

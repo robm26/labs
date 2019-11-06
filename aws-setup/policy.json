@@ -1,0 +1,21 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "cloudwatch:*"
+            ],
+            "Resource": "*",
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "dynamodb:*",
+                "application-autoscaling:*"
+            ],
+            "Resource": "arn:aws:dynamodb:*:*:*",
+            "Effect": "Allow"
+        }
+
+    ]
+}

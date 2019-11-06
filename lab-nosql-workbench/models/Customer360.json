@@ -1,0 +1,409 @@
+{
+  "ModelName": "Customer360",
+  "ModelMetadata": {
+    "Author": "mccaul",
+    "DateCreated": "Nov 04, 2019, 12:06 PM",
+    "DateLastModified": "Nov 04, 2019, 4:14 PM",
+    "Description": "A model for tracking customer interactions across many channels."
+  },
+  "DataModel": [
+    {
+      "TableName": "Customer360",
+      "KeyAttributes": {
+        "PartitionKey": {
+          "AttributeName": "pkey",
+          "AttributeType": "S"
+        },
+        "SortKey": {
+          "AttributeName": "skey",
+          "AttributeType": "S"
+        }
+      },
+      "NonKeyAttributes": [
+        {
+          "AttributeName": "pkey1",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "skey1",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "pkey2",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "attributes",
+          "AttributeType": "M"
+        }
+      ],
+      "GlobalSecondaryIndexes": [
+        {
+          "IndexName": "gsi1",
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeName": "pkey1",
+              "AttributeType": "S"
+            },
+            "SortKey": {
+              "AttributeName": "skey1",
+              "AttributeType": "S"
+            }
+          },
+          "Projection": {
+            "ProjectionType": "ALL"
+          }
+        },
+        {
+          "IndexName": "gsi2",
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeName": "pkey2",
+              "AttributeType": "S"
+            }
+          },
+          "Projection": {
+            "ProjectionType": "ALL"
+          }
+        }
+      ],
+      "TableData": [
+        {
+          "pkey": {
+            "S": "cust100"
+          },
+          "skey": {
+            "S": "profile"
+          },
+          "pkey2": {
+            "S": "Ally Chen"
+          }
+        },
+        {
+          "pkey": {
+            "S": "cust100"
+          },
+          "skey": {
+            "S": "20191104"
+          },
+          "pkey1": {
+            "S": "PITCH"
+          },
+          "skey1": {
+            "S": "20191104"
+          },
+          "attributes": {
+            "M": {
+              "Products": {
+                "L": [
+                  {
+                    "S": "Car"
+                  },
+                  {
+                    "S": "Truck"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "pkey": {
+            "S": "cust100"
+          },
+          "skey": {
+            "S": "20191105"
+          },
+          "pkey1": {
+            "S": "ORDER"
+          },
+          "skey1": {
+            "S": "20191105"
+          },
+          "attributes": {
+            "M": {
+              "Product": {
+                "S": "Truck.SUV"
+              },
+              "ListPrice": {
+                "N": "29000"
+              },
+              "Picture": {
+                "S": "https://dynamodb-images.s3.amazonaws.com/img/car3.jpg"
+              },
+              "Options": {
+                "L": [
+                  {
+                    "S": "Spare Tire"
+                  },
+                  {
+                    "S": "Antenna"
+                  }
+                ]
+              }
+
+            }
+          }
+        },
+        {
+          "pkey": {
+            "S": "cust100"
+          },
+          "skey": {
+            "S": "20191106"
+          },
+          "pkey1": {
+            "S": "DELIVERY"
+          },
+          "skey1": {
+            "S": "20191106"
+          },
+          "attributes": {
+            "M": {
+              "Product": {
+                "S": "Car.Red"
+              },
+
+              "Picture": {
+                "S": "https://dynamodb-images.s3.amazonaws.com/img/car2.jpg"
+              },
+              "Notes": {
+                "S": "Customer will be home, ring doorbell or call 508.259.8000"
+              }
+
+            }
+          }
+        },
+        {
+          "pkey": {
+            "S": "cust100"
+          },
+          "skey": {
+            "S": "20191107"
+          },
+          "pkey1": {
+            "S": "SUPPORT"
+          },
+          "skey1": {
+            "S": "20191107"
+          },
+          "attributes": {
+            "M": {
+              "Product": {
+                "S": "Car.Red"
+              },
+              "Notes": {
+                "S": "Problem with radio, keeps rebooting"
+              }
+            }
+          }
+        },
+        {
+          "pkey": {
+            "S": "cust100"
+          },
+          "skey": {
+            "S": "20191108"
+          },
+          "pkey1": {
+            "S": "SUPPORT"
+          },
+          "skey1": {
+            "S": "20191108"
+          },
+          "attributes": {
+            "M": {
+              "Product": {
+                "S": "Car.Red"
+              },
+              "Notes": {
+                "S": "Customer reports electrical flashes when driving 88 MPH"
+              }
+            }
+          }
+        },
+        {
+          "pkey": {
+            "S": "cust100"
+          },
+          "skey": {
+            "S": "20191109"
+          },
+          "pkey1": {
+            "S": "SUPPORT"
+          },
+          "skey1": {
+            "S": "20191109"
+          },
+          "attributes": {
+            "M": {
+              "Product": {
+                "S": "Car.Red"
+              },
+              "Notes": {
+                "S": "Interior dome light does not work"
+              }
+            }
+          }
+        },
+        {
+          "pkey": {
+            "S": "cust101"
+          },
+          "skey": {
+            "S": "profile"
+          },
+          "pkey2": {
+            "S": "Bharat Reddy"
+          }
+        },
+        {
+          "pkey": {
+            "S": "cust101"
+          },
+          "skey": {
+            "S": "20191102"
+          },
+          "pkey1": {
+            "S": "PITCH"
+          },
+          "skey1": {
+            "S": "20191102"
+          },
+          "attributes": {
+            "M": {
+              "Products": {
+                "L": [
+                  {
+                    "S": "Truck"
+                  },
+                  {
+                    "S": "Motorcycle"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "pkey": {
+            "S": "cust101"
+          },
+          "skey": {
+            "S": "20191103"
+          },
+          "pkey1": {
+            "S": "ORDER"
+          },
+          "skey1": {
+            "S": "20191103"
+          },
+          "attributes": {
+            "M": {
+              "Product": {
+                "S": "Car.Blue"
+              },
+              "ListPrice": {
+                "N": "23000"
+              },
+              "Picture": {
+                "S": "https://dynamodb-images.s3.amazonaws.com/img/car1.jpg"
+              },
+              "Options": {
+                "L": [
+                  {
+                    "S": "Floor Mats"
+                  },
+                  {
+                    "S": "8-track tape player"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "pkey": {
+            "S": "cust102"
+          },
+          "skey": {
+            "S": "profile"
+          },
+          "pkey2": {
+            "S": "Charlotte Dumont"
+          }
+        },
+        {
+          "pkey": {
+            "S": "products"
+          },
+          "skey": {
+            "S": "product1"
+          },
+          "pkey1": {
+            "S": "Car"
+          },
+          "skey1": {
+            "S": "Red"
+          }
+        },
+        {
+          "pkey": {
+            "S": "products"
+          },
+          "skey": {
+            "S": "product2"
+          },
+          "pkey1": {
+            "S": "Car"
+          },
+          "skey1": {
+            "S": "Blue"
+          }
+        },
+        {
+          "pkey": {
+            "S": "products"
+          },
+          "skey": {
+            "S": "product3"
+          },
+          "pkey1": {
+            "S": "Motorcycle"
+          }
+        },
+        {
+          "pkey": {
+            "S": "products"
+          },
+          "skey": {
+            "S": "product4"
+          },
+          "pkey1": {
+            "S": "Truck"
+          },
+          "skey1": {
+            "S": "Pickup"
+          }
+        },
+        {
+          "pkey": {
+            "S": "products"
+          },
+          "skey": {
+            "S": "product5"
+          },
+          "pkey1": {
+            "S": "Truck"
+          },
+          "skey1": {
+            "S": "SUV"
+          }
+        }
+      ],
+      "DataAccess": {
+        "MySql": {}
+      }
+    }
+  ]
+}
